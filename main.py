@@ -1,5 +1,4 @@
 import pygame
-from functions import *
 
 pygame.init()
 
@@ -17,7 +16,11 @@ l = False
 r = False
 walkCounter = 0
 
-
+def redrawGameWindow():
+    global walkCounter
+    win.fill((0, 0, 0))
+    pygame.draw.rect(win, (0, 0, 255), (x, y, w, h))
+    pygame.display.update()
     
 #main loop
 run = True
