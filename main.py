@@ -32,21 +32,21 @@ while run:
             run = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT] and x > v:
+    if keys[pygame.K_LEFT] and x >= v:
         x-=v
-    if keys[pygame.K_RIGHT] and x <1600 - w - v:
+    if keys[pygame.K_RIGHT] and x <1600 - w:
         x+=v
-    if keys[pygame.K_UP] and y > v:
+    if keys[pygame.K_UP] and y >= v:
         y-=v
-    if keys[pygame.K_DOWN] and y < 900 -h - v:
+    if keys[pygame.K_DOWN] and y < 900 -h :
         y+=v
-    if keys[pygame.K_a] and x > v:
+    if keys[pygame.K_a] and x >= v:
         x-=v
-    if keys[pygame.K_d] and x <1600 - w - v:
+    if keys[pygame.K_d] and x <1600 - w :
         x+=v
-    if keys[pygame.K_w] and y > v:
+    if keys[pygame.K_w] and y >= v:
         y-=v
-    if keys[pygame.K_s] and y < 900 -h - v:
+    if keys[pygame.K_s] and y < 900 -h:
         y+=v
     redrawGameWindow()
 #closing the game
