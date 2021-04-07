@@ -31,6 +31,20 @@ r = False
 u = False
 d = False
 
+class explorer(object):
+    def __init__(s, x, y, w, h, v, walking, l, r, u, d):
+        s.x = x
+        s.y = y
+        s.w = w
+        s.h = h
+        s.vel = v
+        s.walking = walking
+        s.l = l
+        s.r = r
+        s.u = u
+        s.d = d
+        s.hitbox = (s.x, s.y, s.w, s.h)
+
 
 def redrawGameWindow():
     win.fill((0, 0, 0))
@@ -64,15 +78,15 @@ while run:
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT] and x >= v:
-        x-=v
+        x -= v
         l = True
         r = False
         u = False
         d = False
         walking = True
 
-    if keys[pygame.K_RIGHT] and x <1600 - w:
-        x+=v
+    if keys[pygame.K_RIGHT] and x < 1600 - w:
+        x += v
         r = True
         l = False
         u = False
@@ -80,15 +94,15 @@ while run:
         walking = True
 
     if keys[pygame.K_UP] and y >= v:
-        y-=v
+        y -= v
         u = True
         r = False
         l = False
         d = False
         walking = True
 
-    if keys[pygame.K_DOWN] and y < 900 -h :
-        y+=v
+    if keys[pygame.K_DOWN] and y < 900 - h:
+        y += v
         d = True
         r = False
         l = False
@@ -96,15 +110,15 @@ while run:
         walking = True
 
     if keys[pygame.K_a] and x >= v:
-        x-=v
+        x -= v
         l = True
         r = False
         u = False
         d = False
         walking = True
 
-    if keys[pygame.K_d] and x <1600 - w:
-        x+=v
+    if keys[pygame.K_d] and x < 1600 - w:
+        x += v
         r = True
         l = False
         u = False
@@ -112,20 +126,20 @@ while run:
         walking = True
 
     if keys[pygame.K_w] and y >= v:
-        y-=v
+        y -= v
         u = True
         r = False
         l = False
         d = False
         walking = True
 
-    if keys[pygame.K_s] and y < 900 -h :
-        y+=v
+    if keys[pygame.K_s] and y < 900 - h:
+        y += v
         d = True
         r = False
         l = False
         u = False
-        walking  = True
+        walking = True
 
     redrawGameWindow()
     walking = False
